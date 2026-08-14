@@ -1,47 +1,42 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { defineRouter } from '#q-app';
+import { routes, handleHotUpdate } from 'vue-router/auto-routes';
+import {
+  createMemoryHistory,
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+} from 'vue-router';
 
-import HomeView from '../views/HomeView.vue'
-import RecipeCatalogPage from '@/features/recipes/pages/RecipeCatalogPage.vue'
-import RecipeDetail from '@/features/recipes/pages/RecipeDetail.vue'
-import StockView from '@/features/stock/pages/StockView.vue'
-import AlimentView from '@/features/aliments/pages/AlimentView.vue'
-import AlimentDetailView from '@/features/aliments/pages/AlimentDetailView.vue'
-import MenuView from '@/features/menus/pages/MenuView.vue'
+/*
+ * If not building with SSR mode, you can
+ * directly export the Router instantiation;
+ *
+ * The function below can be async too; either use
+ * async/await or return a Promise which resolves
+ * with the Router instance.
+ */
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      path: '/',
-      component: HomeView,
-    },
-    {
-      path: '/stock',
-      component: StockView,
-    },
-    {
-      path: '/recipes',
-      component: RecipeCatalogPage,
-    },
-    {
-        path: '/aliments',
-        component: AlimentView,
-    },
-    {
-        path: '/aliment/:id',
-        component: AlimentDetailView
-    },
-    {
-        path: '/recipe/:id',
-        name: 'recipe',
-        component: RecipeDetail
-    },
-    {
-      path: '/menus',
-      name: 'menus',
-      component: MenuView
-    }
-  ],
-})
+export default defineRouter((/* { store, ssrContext } */) => {
+  const createHistory = import.meta.env.QUASAR_SERVER
+    ? createMemoryHistory
+    : import.meta.env.QUASAR_VUE_ROUTER_MODE === 'history'
+      ? createWebHistory
+      : createWebHashHistory;
 
-export default router
+  const Router = createRouter({
+    scrollBehavior: () => ({ left: 0, top: 0 }),
+    routes,
+
+    // Leave this as is and make changes in quasar.conf.js instead!
+    // quasar.conf.js -> build -> vueRouterMode
+    // quasar.conf.js -> build -> publicPath
+    history: createHistory(import.meta.env.QUASAR_VUE_ROUTER_BASE),
+  });
+
+  // enable HMR for it
+  if (import.meta.hot) {
+    handleHotUpdate(Router);
+  }
+
+  return Router;
+});
