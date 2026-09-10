@@ -36,10 +36,10 @@ declare module 'vue-router/auto-routes' {
       '/',
       Record<never, never>,
       Record<never, never>,
-      | '//(publicacceuil)'
+      | '//(public)'
     >,
-    '//(publicacceuil)': RouteRecordInfo<
-      '//(publicacceuil)',
+    '//(public)': RouteRecordInfo<
+      '//(public)',
       '/',
       Record<never, never>,
       Record<never, never>,
@@ -72,10 +72,10 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       Record<never, never>,
       | '/app/(acceuilapp)'
-      | '/app/StockView'
       | '/app/menu/cookableMenu'
       | '/app/recipes/[id]'
       | '/app/recipes/recipesList'
+      | '/app/stock/StockView'
     >,
     '/app/(acceuilapp)': RouteRecordInfo<
       '/app/(acceuilapp)',
@@ -105,9 +105,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/app/StockView': RouteRecordInfo<
-      '/app/StockView',
-      '/app/StockView',
+    '/app/stock/StockView': RouteRecordInfo<
+      '/app/stock/StockView',
+      '/app/stock/StockView',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -128,15 +128,15 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index.vue': {
       routes:
         | '/'
-        | '//(publicacceuil)'
+        | '//(public)'
       views:
         | 'default'
       pathParamNames:
         | never
     }
-    'src/pages/index/(publicacceuil).vue': {
+    'src/pages/index/(public).vue': {
       routes:
-        | '//(publicacceuil)'
+        | '//(public)'
       views:
         | never
       pathParamNames:
@@ -171,10 +171,10 @@ declare module 'vue-router/auto-routes' {
       routes:
         | '/app'
         | '/app/(acceuilapp)'
-        | '/app/StockView'
         | '/app/menu/cookableMenu'
         | '/app/recipes/[id]'
         | '/app/recipes/recipesList'
+        | '/app/stock/StockView'
       views:
         | 'default'
       pathParamNames:
@@ -212,9 +212,9 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/app/StockView.vue': {
+    'src/pages/app/stock/StockView.vue': {
       routes:
-        | '/app/StockView'
+        | '/app/stock/StockView'
       views:
         | never
       pathParamNames:
