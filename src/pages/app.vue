@@ -21,7 +21,12 @@ const menuList = [
     label:'calcul menu',
     separator: false,
     route: '/app/menu/cookableMenu'
-  }
+  },
+  {
+  label: 'fond de placard',
+  separator: false,
+  route: '/app/pantry_staple'
+  },
 ]
 
 </script>
@@ -47,7 +52,7 @@ const menuList = [
       <q-scroll-area class="fit">
         <q-list role="none">
           <template v-for="(menuItem, index) in menuList" :key="index">
-            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple :to="menuItem.route">
+            <q-item clickable v-ripple :to="menuItem.route" exact>
               <q-item-section>
                 {{ menuItem.label }}
               </q-item-section>
