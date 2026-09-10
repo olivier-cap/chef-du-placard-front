@@ -10,7 +10,7 @@ const menuList = [
   {
     label: 'stock actuel',
     separator: false,
-    route: '/app/StockView'
+    route: '/app/stock/StockView'
   },
   {
     label:'liste recettes',

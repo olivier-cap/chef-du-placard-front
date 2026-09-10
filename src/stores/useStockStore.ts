@@ -1,5 +1,5 @@
 import type { StockLine } from "@/models/stockModels";
-import { getStock } from "@/services/stockApi";
+import { getStockSummaryApi } from "@/services/stockApi";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
@@ -14,12 +14,12 @@ export const useStockStore = defineStore('stock', () => {
      * Recherche du stock pour un utilisateur donné (=> un stock donné)
      * @param stockName id du stock
      */
-    async function getStockUser(
+    async function getStockById(
         //userId: number
         stockId: number
     ) {
         try {
-            const result = await getStock(stockId);
+            const result = await getStockSummaryApi(stockId);
             stockLines.value = result
             
         } catch {
@@ -29,7 +29,7 @@ export const useStockStore = defineStore('stock', () => {
 
     return {
         stockLines,
-        getStockUser,
+        getStockUser: getStockById,
     }
 
 

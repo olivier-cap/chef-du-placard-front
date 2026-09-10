@@ -1,3 +1,5 @@
+import type { AlimentModel } from "./alimentModel"
+import type { UnitModel } from "./unitModel"
 
 export interface RecipeModel{
     id:number,
@@ -16,18 +18,6 @@ export interface IngredientModel{
     unit: UnitModel
 }
 
-export interface AlimentModel {
-    id:number,
-    name: string,
-    description: string,
-    isActive: boolean
-}
-
-export interface UnitModel {
-    id:number,
-    name: string,
-    symbol: string
-}
 
 export interface RecipeSummaryModel {
     id:number,
