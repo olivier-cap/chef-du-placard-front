@@ -13,25 +13,26 @@ async function handleSearchMenu() {
 </script>
 
 <template>
-NbPersonnes
-<q-input
-  v-model.number="nbPeople"
-  type="number"
-  outlined
-  dense
-/>
+  <q-page>
+  NbPersonnes
+  <q-input
+    v-model.number="nbPeople"
+    type="number"
+    outlined
+    dense
+  />
 
-NbRepas
-<q-input
-  v-model.number="nbMeal"
-  type="number"
-  outlined
-  dense
-/>
+  NbRepas
+  <q-input
+    v-model.number="nbMeal"
+    type="number"
+    outlined
+    dense
+  />
 
-<q-btn
-@click="handleSearchMenu">
-    Recherche
-</q-btn>
-
+  <q-btn
+  @click="handleSearchMenu">
+      Recherche
+  </q-btn>
+</q-page>
 </template>

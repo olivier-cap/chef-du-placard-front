@@ -5,10 +5,7 @@ import { api } from "@/boot/axios"
  * @param stockId 
  * @returns lignes (simplifiées) du stock : [alimentName, quantité, symboleUnité]
  */
-
-
-//export async function getStock(stockId: number) {
-export async function getStock(stockId: number) {
+export async function getStockSummaryApi(stockId: number) {
     const result = await api.get(
         "/getStock",
          {params:{stockId : stockId}}
