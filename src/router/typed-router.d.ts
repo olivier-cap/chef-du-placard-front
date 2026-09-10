@@ -36,19 +36,11 @@ declare module 'vue-router/auto-routes' {
       '/',
       Record<never, never>,
       Record<never, never>,
-      | '//(index)'
-      | '//second'
+      | '//(public)'
     >,
-    '//(index)': RouteRecordInfo<
-      '//(index)',
+    '//(public)': RouteRecordInfo<
+      '//(public)',
       '/',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '//second': RouteRecordInfo<
-      '//second',
-      '/second',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -58,6 +50,66 @@ declare module 'vue-router/auto-routes' {
       '/:path(.*)',
       { path: ParamValue<true> },
       { path: ParamValue<false> },
+      | never
+    >,
+    '/admin': RouteRecordInfo<
+      '/admin',
+      '/admin',
+      Record<never, never>,
+      Record<never, never>,
+      | '/admin/(adminacceuil)'
+    >,
+    '/admin/(adminacceuil)': RouteRecordInfo<
+      '/admin/(adminacceuil)',
+      '/admin',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/app': RouteRecordInfo<
+      '/app',
+      '/app',
+      Record<never, never>,
+      Record<never, never>,
+      | '/app/(acceuilapp)'
+      | '/app/menu/cookableMenu'
+      | '/app/recipes/[id]'
+      | '/app/recipes/recipesList'
+      | '/app/stock/StockView'
+    >,
+    '/app/(acceuilapp)': RouteRecordInfo<
+      '/app/(acceuilapp)',
+      '/app',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/app/menu/cookableMenu': RouteRecordInfo<
+      '/app/menu/cookableMenu',
+      '/app/menu/cookableMenu',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/app/recipes/[id]': RouteRecordInfo<
+      '/app/recipes/[id]',
+      '/app/recipes/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '/app/recipes/recipesList': RouteRecordInfo<
+      '/app/recipes/recipesList',
+      '/app/recipes/recipesList',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/app/stock/StockView': RouteRecordInfo<
+      '/app/stock/StockView',
+      '/app/stock/StockView',
+      Record<never, never>,
+      Record<never, never>,
       | never
     >,
   }
@@ -76,24 +128,15 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index.vue': {
       routes:
         | '/'
-        | '//(index)'
-        | '//second'
+        | '//(public)'
       views:
         | 'default'
       pathParamNames:
         | never
     }
-    'src/pages/index/(index).vue': {
+    'src/pages/index/(public).vue': {
       routes:
-        | '//(index)'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/index/second.vue': {
-      routes:
-        | '//second'
+        | '//(public)'
       views:
         | never
       pathParamNames:
@@ -106,6 +149,76 @@ declare module 'vue-router/auto-routes' {
         | never
       pathParamNames:
         | 'path'
+    }
+    'src/pages/admin.vue': {
+      routes:
+        | '/admin'
+        | '/admin/(adminacceuil)'
+      views:
+        | 'default'
+      pathParamNames:
+        | never
+    }
+    'src/pages/admin/(adminacceuil).vue': {
+      routes:
+        | '/admin/(adminacceuil)'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/app.vue': {
+      routes:
+        | '/app'
+        | '/app/(acceuilapp)'
+        | '/app/menu/cookableMenu'
+        | '/app/recipes/[id]'
+        | '/app/recipes/recipesList'
+        | '/app/stock/StockView'
+      views:
+        | 'default'
+      pathParamNames:
+        | never
+    }
+    'src/pages/app/(acceuilapp).vue': {
+      routes:
+        | '/app/(acceuilapp)'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/app/menu/cookableMenu.vue': {
+      routes:
+        | '/app/menu/cookableMenu'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/app/recipes/[id].vue': {
+      routes:
+        | '/app/recipes/[id]'
+      views:
+        | never
+      pathParamNames:
+        | 'id'
+    }
+    'src/pages/app/recipes/recipesList.vue': {
+      routes:
+        | '/app/recipes/recipesList'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/app/stock/StockView.vue': {
+      routes:
+        | '/app/stock/StockView'
+      views:
+        | never
+      pathParamNames:
+        | never
     }
   }
 
