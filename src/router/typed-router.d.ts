@@ -73,6 +73,7 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | '/app/(acceuilapp)'
       | '/app/menu/cookableMenu'
+      | '/app/pantry_staple/(pantry_staple)'
       | '/app/recipes/[id]'
       | '/app/recipes/recipesList'
       | '/app/stock/StockView'
@@ -87,6 +88,13 @@ declare module 'vue-router/auto-routes' {
     '/app/menu/cookableMenu': RouteRecordInfo<
       '/app/menu/cookableMenu',
       '/app/menu/cookableMenu',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/app/pantry_staple/(pantry_staple)': RouteRecordInfo<
+      '/app/pantry_staple/(pantry_staple)',
+      '/app/pantry_staple',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -172,6 +180,7 @@ declare module 'vue-router/auto-routes' {
         | '/app'
         | '/app/(acceuilapp)'
         | '/app/menu/cookableMenu'
+        | '/app/pantry_staple/(pantry_staple)'
         | '/app/recipes/[id]'
         | '/app/recipes/recipesList'
         | '/app/stock/StockView'
@@ -191,6 +200,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/app/menu/cookableMenu.vue': {
       routes:
         | '/app/menu/cookableMenu'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/app/pantry_staple/(pantry_staple).vue': {
+      routes:
+        | '/app/pantry_staple/(pantry_staple)'
       views:
         | never
       pathParamNames:
