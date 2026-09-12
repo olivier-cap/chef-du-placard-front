@@ -57,9 +57,6 @@ function openCreateRecipe(): void {
           Aucune recette enregistrée
         </div>
 
-        <p class="text-grey-7">
-          Commencez par créer votre première recette.
-        </p>
       </div>
 
       <template v-else>
