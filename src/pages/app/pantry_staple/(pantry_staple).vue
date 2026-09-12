@@ -8,10 +8,6 @@ import PantryStapleStateTable from '@/components/pantry_staples/PantryStapleStat
 
 <template>
 
-<div>
-    Entrée dans pantry staple
-</div>
-
 <PantryStapleStateTable />
 
 </template>

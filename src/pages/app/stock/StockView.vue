@@ -2,13 +2,16 @@
 import Stock from '@/components/stock/Stock.vue';
 import StockTable from '@/components/stock/StockTable.vue';
 import { useStockStore } from '@/stores/useStockStore';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const store = useStockStore();
 
 onMounted(async () => {
   await store.getStockUser(1);
 });
+
+const vueTable = ref(true);
+
 </script>
 
 <template>
@@ -23,10 +26,13 @@ onMounted(async () => {
           Consultez les aliments actuellement disponibles dans votre placard.
         </p>
       </header>
-      <Stock />
     </div>
 
-    <StockTable/>
+    <q-btn v-if="vueTable" icon="grid_view" @click="vueTable=false"/>
+    <q-btn v-if="!vueTable" icon="view_list" @click="vueTable=true"/>
 
+    <StockTable v-if="vueTable"/>
+
+    <Stock v-if="!vueTable"/>
   </q-page>
 </template>

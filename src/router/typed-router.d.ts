@@ -72,15 +72,24 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       Record<never, never>,
       | '/app/(acceuilapp)'
+      | '/app/menu/calculatedmenu'
       | '/app/menu/cookableMenu'
       | '/app/pantry_staple/(pantry_staple)'
       | '/app/recipes/[id]'
       | '/app/recipes/recipesList'
+      | '/app/shopping_list/shoppinglist'
       | '/app/stock/StockView'
     >,
     '/app/(acceuilapp)': RouteRecordInfo<
       '/app/(acceuilapp)',
       '/app',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/app/menu/calculatedmenu': RouteRecordInfo<
+      '/app/menu/calculatedmenu',
+      '/app/menu/calculatedmenu',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -109,6 +118,13 @@ declare module 'vue-router/auto-routes' {
     '/app/recipes/recipesList': RouteRecordInfo<
       '/app/recipes/recipesList',
       '/app/recipes/recipesList',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/app/shopping_list/shoppinglist': RouteRecordInfo<
+      '/app/shopping_list/shoppinglist',
+      '/app/shopping_list/shoppinglist',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -179,10 +195,12 @@ declare module 'vue-router/auto-routes' {
       routes:
         | '/app'
         | '/app/(acceuilapp)'
+        | '/app/menu/calculatedmenu'
         | '/app/menu/cookableMenu'
         | '/app/pantry_staple/(pantry_staple)'
         | '/app/recipes/[id]'
         | '/app/recipes/recipesList'
+        | '/app/shopping_list/shoppinglist'
         | '/app/stock/StockView'
       views:
         | 'default'
@@ -192,6 +210,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/app/(acceuilapp).vue': {
       routes:
         | '/app/(acceuilapp)'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/app/menu/calculatedmenu.vue': {
+      routes:
+        | '/app/menu/calculatedmenu'
       views:
         | never
       pathParamNames:
@@ -224,6 +250,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/app/recipes/recipesList.vue': {
       routes:
         | '/app/recipes/recipesList'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/app/shopping_list/shoppinglist.vue': {
+      routes:
+        | '/app/shopping_list/shoppinglist'
       views:
         | never
       pathParamNames:

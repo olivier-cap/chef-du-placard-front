@@ -12,7 +12,6 @@ export async function findAllRecipesSummary() {
     return response.data.recipes;
 }
 
-//export async function findOneRecipe(recipeId: number)
 export async function findOneRecipe(recipeId: number) {
     const response = await api.get('/getOneRecipe',
         {
